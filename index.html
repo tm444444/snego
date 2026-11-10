@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>СНЕGO — электрический снегокат</title>
+  <meta name="description" content="СНЕGO — электрический снегокат: тихо и без выхлопа. От 200 000 ₽. Соберите свой в 3D-конструкторе.">
+  <meta name="theme-color" content="#39A5F2">
+  <meta property="og:title" content="СНЕGO — электрический снегокат">
+  <meta property="og:description" content="Тихо. Без выхлопа. От 200 000 ₽. Соберите свой в 3D-конструкторе.">
+  <meta property="og:image" content="assets/snego-logo.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2339A5F2'/%3E%3Cg stroke='%23fff' stroke-width='5' stroke-linecap='round'%3E%3Cpath d='M32 12v40M14.7 22l34.6 20M14.7 42l34.6-20'/%3E%3C/g%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Three.js подключается с CDN только при открытии конструктора -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- ========== ШАПКА ========== -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="СНЕGO — на главную">
+      <img src="assets/snego-logo-compact.svg" alt="СНЕGO" width="120" height="35">
+    </a>
+    <nav class="nav" aria-label="Основное меню">
+      <a href="#product" data-link="home">Снегокат</a>
+      <a href="#specs" data-link="home">Характеристики</a>
+      <a href="#price" data-link="home">Цена</a>
+      <a href="#configurator" class="nav-tab" data-link="configurator">Конструктор</a>
+    </nav>
+    <a class="btn btn-primary btn-sm header-cta" href="#configurator">Собрать</a>
+  </div>
+</header>
+
+<!-- ========== ГЛАВНАЯ ========== -->
+<main id="viewHome" class="view">
+
+  <!-- Hero: только фон #39A5F2 — на нём стоит логотип -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <p class="eyebrow">Электрический снегокат</p>
+      <img class="hero-logo" src="assets/snego-logo-compact.svg" alt="СНЕGO" width="2000" height="583">
+      <h1 class="hero-title">Тихо. Без выхлопа.<br>Просто по снегу.</h1>
+      <p class="hero-sub">Лёгкая снежная техника, на которой едут стоя: сзади гусеница, спереди управляемая лыжа, вместо бензина — электромотор.</p>
+      <div class="hero-actions">
+        <a class="btn btn-light btn-xl" href="#configurator">Собрать снегокат мечты</a>
+        <a class="link-arrow" href="#product">Посмотреть снегокат</a>
+      </div>
+      <p class="hero-price">от <strong>200&nbsp;000&nbsp;₽</strong></p>
+    </div>
+  </section>
+
+  <!-- Фото -->
+  <section class="section" id="product">
+    <div class="container">
+      <p class="eyebrow eyebrow-blue">Знакомьтесь</p>
+      <h2 class="h2">Настоящий. Не рендер.</h2>
+      <p class="lead">Так выглядит базовая модель СНЕGO. Нажмите на точку, чтобы узнать, что где.</p>
+
+      <figure class="photo">
+        <div class="photo-frame">
+          <img src="assets/snowbike-photo.jpg" alt="Электрический снегокат СНЕGO с бирюзовой рамой в сосновом лесу" width="1025" height="599" loading="lazy">
+          <div class="hotspots" id="hotspots"></div>
+        </div>
+        <ol class="legend" id="legend"></ol>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Устройство -->
+  <section class="section section-soft">
+    <div class="container">
+      <p class="eyebrow eyebrow-blue">Как устроен</p>
+      <h2 class="h2">Ничего лишнего.</h2>
+      <div class="bento">
+        <article class="tile tile-navy tile-wide">
+          <h3>Электромотор вместо бензина</h3>
+          <p>Снегокат едет тихо и без выхлопа. Слышно снег, а не двигатель.</p>
+          <div class="tile-art tile-art-wave" aria-hidden="true"></div>
+        </article>
+        <article class="tile">
+          <h3>Едешь стоя</h3>
+          <p>Встал на платформу, взялся за руль — и вперёд. Лёгкая снежная техника без сиденья.</p>
+        </article>
+        <article class="tile tile-teal">
+          <h3>Фирменная рама</h3>
+          <p>Решётчатая рама с платформой для ног. Бирюзовый — цвет базовой модели.</p>
+        </article>
+        <article class="tile">
+          <h3>Гусеница и лыжа</h3>
+          <p>Сзади резиновая гусеница с опорными катками, спереди одна управляемая лыжа с загнутым носом-петлёй.</p>
+        </article>
+        <article class="tile">
+          <h3>Фара и фонарь</h3>
+          <p>Фара на руле под обтекателем, фонарь на заднем бампере.</p>
+        </article>
+        <article class="tile">
+          <h3>Батарея под чехлом</h3>
+          <p>Аккумулятор спрятан в батарейном отсеке под камуфляжным чехлом.</p>
+        </article>
+        <a class="tile tile-blue tile-wide tile-cta" href="#configurator">
+          <img src="assets/snego-logo-compact.svg" alt="" width="2000" height="583" loading="lazy">
+          <span class="tile-cta-text">Собрать снегокат мечты <span aria-hidden="true">›</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Характеристики -->
+  <section class="section" id="specs">
+    <div class="container">
+      <p class="eyebrow eyebrow-blue">Характеристики</p>
+      <h2 class="h2">Цифры — скоро.</h2>
+      <p class="lead">Эти данные пока уточняются. Как только подтвердим, они появятся здесь.</p>
+      <dl class="specs">
+        <div class="spec"><dt>Мощность</dt><dd><span class="tbd">[уточнить]</span></dd></div>
+        <div class="spec"><dt>Запас хода</dt><dd><span class="tbd">[уточнить]</span></dd></div>
+        <div class="spec"><dt>Максимальная скорость</dt><dd><span class="tbd">[уточнить]</span></dd></div>
+        <div class="spec"><dt>Масса</dt><dd><span class="tbd">[уточнить]</span></dd></div>
+        <div class="spec"><dt>Время зарядки</dt><dd><span class="tbd">[уточнить]</span></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Тизер конструктора -->
+  <section class="section section-dark" id="build">
+    <div class="snowfall" aria-hidden="true"></div>
+    <div class="container center">
+      <p class="eyebrow eyebrow-light">Конструктор</p>
+      <h2 class="h2">Собери свой.</h2>
+      <p class="lead lead-light">Покрутите 3D-модель и добавьте опции: фонари, защиту рук, подогрев ручек. Каждая появляется прямо на модели, а цена пересчитывается сразу.</p>
+      <ul class="chips" id="teaserChips"></ul>
+      <a class="btn btn-blue btn-xl" href="#configurator">Собрать снегокат мечты</a>
+    </div>
+  </section>
+
+  <!-- Цена -->
+  <section class="section" id="price">
+    <div class="container center">
+      <p class="eyebrow eyebrow-blue">Цена</p>
+      <p class="price-big">200&nbsp;000&nbsp;₽</p>
+      <p class="lead">Базовая комплектация. Каждая опция — от&nbsp;2&nbsp;000 до&nbsp;5&nbsp;000&nbsp;₽.</p>
+      <a class="btn btn-primary btn-lg" href="#configurator">Собрать снегокат мечты</a>
+    </div>
+  </section>
+
+  <!-- Доставка и контакты -->
+  <section class="section section-soft" id="contacts">
+    <div class="container">
+      <h2 class="h2 h2-sm">Доставка и контакты</h2>
+      <div class="cards3">
+        <div class="card"><h3>Город</h3><p><span class="tbd">[уточнить]</span></p></div>
+        <div class="card"><h3>Сроки доставки</h3><p><span class="tbd">[уточнить]</span></p></div>
+        <div class="card"><h3>Контакты</h3><p><span class="tbd">[уточнить]</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img class="footer-logo" src="assets/snego-logo-compact.svg" alt="СНЕGO" width="120" height="35" loading="lazy">
+      <p>Тестовая версия сайта. Заявки никуда не отправляются.</p>
+      <p class="muted">© <span id="year">2026</span> СНЕGO</p>
+    </div>
+  </footer>
+</main>
+
+<!-- ========== КОНСТРУКТОР ========== -->
+<main id="viewConfig" class="view config" hidden>
+  <section class="stage" id="stage" aria-label="3D-модель снегоката">
+    <div class="stage-canvas" id="stageCanvas"></div>
+
+    <div class="stage-top">
+      <div class="stage-title">
+        <a class="back" href="#top" aria-label="На главную">←</a>
+        <div>
+          <strong>Ваш СНЕGO</strong>
+          <span>3D · <span id="stageColorName">Бирюзовый</span></span>
+        </div>
+      </div>
+      <div class="stage-tools">
+        <button class="icon-btn" id="btnRotate" type="button" aria-pressed="true" title="Автовращение" aria-label="Автовращение">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v4h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="icon-btn" id="btnReset" type="button" title="Вернуть вид" aria-label="Вернуть вид">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <button class="icon-btn" id="btnFull" type="button" title="На весь экран" aria-label="На весь экран">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <p class="stage-hint" id="stageHint">Вращайте мышью · колесо — масштаб</p>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <div class="stage-loader" id="stageLoader">
+      <div class="spinner" aria-hidden="true"></div>
+      <p>Загружаем 3D-модель…</p>
+    </div>
+  </section>
+
+  <aside class="panel" aria-label="Опции снегоката">
+    <div class="panel-scroll">
+      <div class="panel-head">
+        <h1 class="panel-title">Соберите снегокат мечты</h1>
+        <p class="panel-sub">Базовая комплектация — <strong>200&nbsp;000&nbsp;₽</strong>. Добавляйте опции — они появятся на модели.</p>
+      </div>
+
+      <div class="panel-group">
+        <h2 class="group-title">Цвет рамы <span class="group-note">без доплаты</span></h2>
+        <div class="swatches" id="swatches" role="radiogroup" aria-label="Цвет рамы"></div>
+        <p class="swatch-name" id="swatchName"></p>
+      </div>
+
+      <div id="optionGroups"></div>
+    </div>
+
+    <div class="panel-foot">
+      <div class="total-row">
+        <span>Итого</span>
+        <strong class="total" id="total">200&nbsp;000&nbsp;₽</strong>
+      </div>
+      <p class="total-sub" id="totalSub">База 200&nbsp;000&nbsp;₽ · без опций</p>
+      <div class="foot-actions">
+        <button class="btn btn-blue btn-block" id="btnOrder" type="button">Оформить заявку</button>
+        <button class="btn btn-ghost" id="btnClear" type="button">Сбросить</button>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<!-- ========== ЗАЯВКА ========== -->
+<dialog class="dialog" id="orderDialog" aria-labelledby="orderTitle">
+  <button class="dialog-close" id="dialogClose" type="button" aria-label="Закрыть">×</button>
+
+  <div id="orderStep">
+    <h2 class="dialog-title" id="orderTitle">Заявка на снегокат</h2>
+    <p class="test-note"><strong>Это тестовая версия сайта.</strong> Заявка никуда не отправляется, данные не сохраняются и никому не передаются.</p>
+
+    <div class="summary">
+      <img class="summary-shot" id="summaryShot" alt="Ваша конфигурация снегоката" hidden>
+      <ul class="summary-list" id="summaryList"></ul>
+      <div class="summary-total"><span>Итого</span><strong id="summaryTotal"></strong></div>
+    </div>
+
+    <form class="form" id="orderForm" novalidate>
+      <label class="field">
+        <span>Имя</span>
+        <input name="name" type="text" autocomplete="name" required placeholder="Как к вам обращаться">
+      </label>
+      <label class="field">
+        <span>Телефон</span>
+        <input name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="+7 900 000-00-00">
+      </label>
+      <label class="field">
+        <span>Город <em>необязательно</em></span>
+        <input name="city" type="text" autocomplete="address-level2">
+      </label>
+      <label class="field">
+        <span>Комментарий <em>необязательно</em></span>
+        <textarea name="comment" rows="2"></textarea>
+      </label>
+      <p class="form-error" id="formError" role="alert"></p>
+      <button class="btn btn-primary btn-block btn-lg" type="submit">Отправить заявку (тест)</button>
+    </form>
+  </div>
+
+  <div id="doneStep" class="done" hidden>
+    <div class="done-icon" aria-hidden="true">✓</div>
+    <h2 class="dialog-title">Заявка сформирована</h2>
+    <p>Но это тестовый сайт, поэтому <strong>она никуда не отправлена</strong>. Настоящую отправку подключим, когда появятся контакты компании.</p>
+    <div class="done-actions">
+      <button class="btn btn-primary btn-block" id="btnCopy" type="button">Скопировать сводку</button>
+      <button class="btn btn-ghost-dark btn-block" id="btnBack" type="button">Вернуться в конструктор</button>
+    </div>
+  </div>
+</dialog>
+
+<script src="scene3d.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
